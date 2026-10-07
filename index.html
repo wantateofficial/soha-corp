@@ -4,85 +4,112 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>주식회사 소하</title>
-<meta name="description" content="주식회사 소하 공고">
+<meta name="description" content="주식회사 소하 부동산 임대, 매매, 자산관리">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;700&family=Noto+Sans+KR:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;700;900&family=Noto+Sans+KR:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --ink: #1a1a1a;
-    --muted: #6b6b6b;
-    --line: #1a1a1a;
-    --hair: #d6d3cc;
-    --paper: #f7f5f0;
+    --ink: #1b1a17;
+    --muted: #75716a;
+    --line: #1b1a17;
+    --hair: #d9d5cc;
+    --paper: #f5f2ec;
+    --stone: #e9e4d9;
+    --accent: #8a5a2b;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { -webkit-text-size-adjust: 100%; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
   body {
-    background: var(--paper);
-    color: var(--ink);
+    background: var(--paper); color: var(--ink);
     font-family: "Noto Sans KR", system-ui, sans-serif;
-    font-size: 16px;
-    line-height: 1.75;
+    font-size: 16px; line-height: 1.75;
   }
-  .wrap { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+  a { color: inherit; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+  .serif { font-family: "Noto Serif KR", serif; }
 
-  header { border-bottom: 2px solid var(--line); }
-  header .wrap {
-    display: flex; justify-content: space-between; align-items: baseline;
-    padding-top: 40px; padding-bottom: 14px;
-  }
-  .brand {
-    font-family: "Noto Serif KR", serif; font-weight: 700;
-    font-size: 26px; letter-spacing: -0.02em; color: var(--ink); text-decoration: none;
-  }
-  nav a {
-    font-size: 15px; font-weight: 500; color: var(--ink);
-    text-decoration: none; border-bottom: 1px solid var(--ink);
-  }
+  /* 상단 */
+  header { border-bottom: 1px solid var(--line); }
+  header .wrap { display: flex; justify-content: space-between; align-items: center; height: 72px; }
+  .brand { font-family: "Noto Serif KR", serif; font-weight: 700; font-size: 22px; letter-spacing: -0.02em; text-decoration: none; }
+  nav { display: flex; gap: 28px; }
+  nav a { font-size: 14px; text-decoration: none; }
+  nav a:hover { text-decoration: underline; }
 
-  main.wrap { padding-top: 48px; padding-bottom: 80px; }
-  h1 {
-    font-family: "Noto Serif KR", serif; font-weight: 700;
-    font-size: 20px; margin-bottom: 16px;
-  }
+  /* 공고 띠 */
+  .notice-bar { background: var(--ink); color: var(--paper); }
+  .notice-bar .wrap { display: flex; gap: 20px; align-items: center; height: 44px; font-size: 14px; }
+  .notice-bar strong { font-weight: 500; letter-spacing: 0.08em; }
+  .notice-bar a { margin-left: auto; text-decoration: none; border-bottom: 1px solid var(--paper); }
 
-  /* 공고 목록 */
+  /* 히어로 */
+  .hero .wrap { display: grid; grid-template-columns: 1fr 1fr; align-items: end; gap: 40px; padding-top: 96px; }
+  .hero h1 { font-family: "Noto Serif KR", serif; font-weight: 900; font-size: clamp(40px, 6vw, 76px); line-height: 1.12; letter-spacing: -0.03em; padding-bottom: 72px; }
+  .hero h1 span { color: var(--accent); }
+  .hero svg { width: 100%; height: auto; display: block; }
+
+  /* 사업 */
+  section.block { border-top: 1px solid var(--line); }
+  .label { font-size: 12px; letter-spacing: 0.18em; color: var(--muted); }
+  .biz { display: grid; grid-template-columns: repeat(3, 1fr); }
+  .biz > div { padding: 40px 32px 56px 0; border-right: 1px solid var(--hair); }
+  .biz > div + div { padding-left: 32px; }
+  .biz > div:last-child { border-right: 0; }
+  .biz .no { font-family: "Noto Serif KR", serif; font-size: 44px; font-weight: 500; color: var(--accent); line-height: 1; }
+  .biz h3 { font-family: "Noto Serif KR", serif; font-size: 22px; font-weight: 700; margin: 28px 0 8px; }
+  .biz p { color: var(--muted); font-size: 15px; word-break: keep-all; }
+  .block-head { display: flex; justify-content: space-between; align-items: baseline; padding-top: 28px; }
+
+  /* 공고 */
+  #notice { background: var(--stone); }
+  #notice .wrap { padding-top: 28px; padding-bottom: 72px; }
+  #notice h2 { font-family: "Noto Serif KR", serif; font-size: 28px; font-weight: 700; margin: 20px 0 20px; }
   table { width: 100%; border-collapse: collapse; border-top: 1px solid var(--line); }
-  th, td { text-align: left; padding: 12px 8px; border-bottom: 1px solid var(--hair); font-size: 15px; }
+  th, td { text-align: left; padding: 14px 8px; border-bottom: 1px solid #cfc8b9; font-size: 15px; }
   th { font-weight: 500; color: var(--muted); font-size: 13px; }
-  td.no, th.no { width: 56px; }
-  td.date, th.date { width: 120px; white-space: nowrap; }
-  td a { color: var(--ink); }
-  .empty { padding: 28px 8px; color: var(--muted); border-bottom: 1px solid var(--hair); }
+  td.no, th.no { width: 64px; white-space: nowrap; }
+  td.date, th.date { width: 130px; white-space: nowrap; }
+  .empty { padding: 28px 8px; color: var(--muted); }
 
-  /* 공고 본문 */
-  article { margin-top: 64px; padding-top: 28px; border-top: 2px solid var(--line); }
-  article .label { font-size: 13px; color: var(--muted); margin-bottom: 6px; }
-  article h2 {
-    font-family: "Noto Serif KR", serif; font-weight: 700;
-    font-size: 24px; margin-bottom: 28px; letter-spacing: -0.01em;
-  }
-  article p { margin-bottom: 18px; word-break: keep-all; }
-  .meta { margin-top: 36px; border-top: 1px solid var(--hair); }
+  article { background: var(--paper); margin-top: 40px; padding: 40px; border-top: 2px solid var(--line); }
+  article .tag { font-size: 13px; color: var(--muted); margin-bottom: 6px; }
+  article h3 { font-family: "Noto Serif KR", serif; font-weight: 700; font-size: 24px; margin-bottom: 24px; }
+  article p { margin-bottom: 16px; word-break: keep-all; }
+  .meta { margin-top: 28px; border-top: 1px solid var(--hair); }
   .meta div { display: flex; padding: 10px 0; border-bottom: 1px solid var(--hair); font-size: 15px; }
   .meta dt { width: 120px; flex-shrink: 0; color: var(--muted); }
   .meta dd { word-break: keep-all; }
-  .sign { margin-top: 36px; text-align: right; line-height: 2; }
+  .sign { margin-top: 32px; text-align: right; line-height: 2; }
   .sign strong { font-family: "Noto Serif KR", serif; font-size: 18px; }
 
-  footer { border-top: 1px solid var(--line); }
-  footer .wrap { padding-top: 20px; padding-bottom: 40px; font-size: 13px; color: var(--muted); }
+  /* 회사 정보 */
+  .info { display: grid; grid-template-columns: 1fr 2fr; gap: 40px; padding: 28px 0 80px; }
+  .info dl div { display: flex; padding: 14px 0; border-bottom: 1px solid var(--hair); }
+  .info dl div:first-child { border-top: 1px solid var(--hair); }
+  .info dt { width: 120px; flex-shrink: 0; color: var(--muted); font-size: 14px; }
+  .info dd { font-size: 15px; word-break: keep-all; }
 
-  @media (max-width: 520px) {
-    header .wrap { padding-top: 28px; }
-    .brand { font-size: 22px; }
-    main.wrap { padding-top: 36px; }
-    td.no, th.no { width: 44px; white-space: nowrap; }
-    td.date, th.date { width: 92px; }
-    article h2 { font-size: 21px; }
-    .meta div { flex-direction: column; }
-    .meta dt { width: auto; }
+  footer { background: var(--ink); color: #b9b3a7; }
+  footer .wrap { padding-top: 32px; padding-bottom: 40px; font-size: 13px; display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+  footer .serif { color: var(--paper); font-size: 18px; }
+
+  @media (max-width: 760px) {
+    nav { gap: 16px; }
+    .hero .wrap { grid-template-columns: 1fr; padding-top: 56px; gap: 0; }
+    .hero h1 { padding-bottom: 32px; }
+    .biz { grid-template-columns: 1fr; }
+    .biz > div, .biz > div + div { padding: 32px 0; border-right: 0; border-bottom: 1px solid var(--hair); }
+    .biz > div:last-child { border-bottom: 0; }
+    .info { grid-template-columns: 1fr; gap: 8px; }
+    article { padding: 28px 20px; }
+    .meta div, .info dl div { flex-direction: column; }
+    td.no, th.no { width: 44px; }
+    td.date, th.date { width: 96px; }
+    .notice-bar .wrap { gap: 12px; }
+  }
+  @media (max-width: 420px) {
+    nav a.opt { display: none; }
   }
 </style>
 </head>
@@ -91,13 +118,84 @@
 <header>
   <div class="wrap">
     <a class="brand" href="/">주식회사 소하</a>
-    <nav><a href="#notice">공고</a></nav>
+    <nav>
+      <a class="opt" href="#business">사업분야</a>
+      <a class="opt" href="#company">회사정보</a>
+      <a href="#notice">공고</a>
+    </nav>
   </div>
 </header>
 
-<main class="wrap">
-  <section id="notice">
-    <h1>공고</h1>
+<div class="notice-bar">
+  <div class="wrap">
+    <strong>공고</strong>
+    <span id="notice-latest">현재 게시된 공고가 없습니다.</span>
+    <a href="#notice">전체 보기</a>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="wrap">
+    <h1>땅과 건물의<br><span>가치</span>를 봅니다</h1>
+    <svg viewBox="0 0 520 420" fill="none" stroke="#1b1a17" stroke-width="1.2" aria-hidden="true">
+      <line x1="0" y1="419" x2="520" y2="419" stroke-width="2"/>
+      <!-- 뒤 건물 -->
+      <rect x="250" y="40" width="160" height="379" fill="#e9e4d9"/>
+      <g stroke="#75716a" stroke-width="1">
+        <line x1="250" y1="80" x2="410" y2="80"/><line x1="250" y1="120" x2="410" y2="120"/>
+        <line x1="250" y1="160" x2="410" y2="160"/><line x1="250" y1="200" x2="410" y2="200"/>
+        <line x1="250" y1="240" x2="410" y2="240"/><line x1="250" y1="280" x2="410" y2="280"/>
+        <line x1="250" y1="320" x2="410" y2="320"/><line x1="250" y1="360" x2="410" y2="360"/>
+        <line x1="290" y1="40" x2="290" y2="419"/><line x1="330" y1="40" x2="330" y2="419"/><line x1="370" y1="40" x2="370" y2="419"/>
+      </g>
+      <!-- 앞 건물 -->
+      <rect x="90" y="150" width="200" height="269" fill="#f5f2ec"/>
+      <rect x="90" y="150" width="200" height="14" fill="#1b1a17"/>
+      <g>
+        <rect x="112" y="186" width="34" height="46"/><rect x="173" y="186" width="34" height="46"/><rect x="234" y="186" width="34" height="46"/>
+        <rect x="112" y="252" width="34" height="46"/><rect x="173" y="252" width="34" height="46" fill="#8a5a2b"/><rect x="234" y="252" width="34" height="46"/>
+        <rect x="112" y="318" width="34" height="46"/><rect x="173" y="318" width="34" height="46"/><rect x="234" y="318" width="34" height="46"/>
+        <rect x="168" y="378" width="44" height="41"/>
+      </g>
+      <!-- 낮은 건물 -->
+      <rect x="400" y="300" width="100" height="119" fill="#f5f2ec"/>
+      <polyline points="395,300 450,262 505,300"/>
+      <rect x="425" y="330" width="22" height="30"/><rect x="458" y="330" width="22" height="30"/>
+      <rect x="440" y="379" width="22" height="40"/>
+      <!-- 나무 -->
+      <line x1="40" y1="419" x2="40" y2="360"/>
+      <circle cx="40" cy="342" r="22" fill="#e9e4d9"/>
+    </svg>
+  </div>
+</section>
+
+<section class="block" id="business">
+  <div class="wrap">
+    <div class="block-head"><span class="label">BUSINESS</span></div>
+    <div class="biz">
+      <div>
+        <div class="no">01</div>
+        <h3>부동산 임대</h3>
+        <p>주거와 상업 공간의 임대 및 대여</p>
+      </div>
+      <div>
+        <div class="no">02</div>
+        <h3>부동산 매매</h3>
+        <p>경매와 공매를 통한 부동산 취득 및 매각</p>
+      </div>
+      <div>
+        <div class="no">03</div>
+        <h3>자산관리</h3>
+        <p>부동산 투자와 자산관리 컨설팅</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="notice">
+  <div class="wrap">
+    <span class="label">NOTICE</span>
+    <h2>공고</h2>
     <table>
       <thead>
         <tr><th class="no">번호</th><th>제목</th><th class="date">게시일</th></tr>
@@ -105,67 +203,80 @@
       <tbody>
         <!--
           [게시 방법]
-          1차 공고 날: 아래 "1차" 줄의 주석 표시를 지우고, 게시일을 그날 날짜로 적습니다.
+          1차 공고 날: "게시된 공고가 없습니다" 줄을 지우고, 아래 "1차" 줄의 주석 표시를 지운 뒤 게시일을 적습니다.
           2차 공고 날: "2차" 줄도 똑같이 합니다.
-          그리고 아래 "게시된 공고가 없습니다" 줄은 1차 공고 날 지웁니다.
+          상단 공고 띠(notice-latest)의 문구도 최신 공고 제목으로 바꿉니다.
         -->
         <tr><td colspan="3" class="empty">현재 게시된 공고가 없습니다.</td></tr>
         <!-- 1차 <tr><td class="no">1</td><td><a href="#notice-1">해산 및 채권신고 공고 (제1차)</a></td><td class="date">2026.10.00</td></tr> -->
         <!-- 2차 <tr><td class="no">2</td><td><a href="#notice-2">해산 및 채권신고 공고 (제2차)</a></td><td class="date">2026.10.00</td></tr> -->
       </tbody>
     </table>
-  </section>
 
-  <!--
-    [공고 본문]
-    등기 완료 전에는 hidden 상태로 둡니다.
-    1차 공고 날: notice-1 의 hidden 을 지우고, 게시일을 적습니다.
-    2차 공고 날: notice-2 의 hidden 을 지우고, 게시일을 적습니다.
-    채권신고 마감일은 2차 공고일로부터 2개월이 넘는 날이어야 합니다.
-  -->
+    <!--
+      [공고 본문]
+      등기 완료 전에는 hidden 상태로 둡니다.
+      1차 공고 날: notice-1 의 hidden 을 지우고, 게시일을 적습니다.
+      2차 공고 날: notice-2 의 hidden 을 지우고, 게시일을 적습니다.
+      채권신고 마감일은 2차 공고일로부터 2개월이 넘는 날이어야 합니다.
+    -->
 
-  <article id="notice-2" hidden>
-    <div class="label">공고 제2호</div>
-    <h2>해산 및 채권신고 공고 (제2차)</h2>
-    <p>당 회사는 2026년 10월 8일 주주총회의 결의로 해산하였으므로, 당 회사에 대하여 채권을 가지신 분은 2027년 1월 4일까지 그 채권액을 신고하여 주시기 바랍니다.</p>
-    <p>위 기간 내에 신고하지 아니하면 청산에서 제외됩니다.</p>
-    <dl class="meta">
-      <div><dt>게시일</dt><dd>2026년 10월 00일</dd></div>
-      <div><dt>신고 기한</dt><dd>2027년 1월 4일까지</dd></div>
-      <div><dt>신고처</dt><dd>경기도 파주시 청석로 272, 1004호(동패동, 센타프라자1)<br>sinryeo360@kakao.com</dd></div>
-    </dl>
-    <div class="sign">
-      2026년 10월 00일<br>
-      <strong>주식회사 소하</strong><br>
-      경기도 파주시 청석로 272, 1004호(동패동, 센타프라자1)<br>
-      청산인 한명수
+    <article id="notice-2" hidden>
+      <div class="tag">공고 제2호</div>
+      <h3>해산 및 채권신고 공고 (제2차)</h3>
+      <p>당 회사는 2026년 10월 8일 주주총회의 결의로 해산하였으므로, 당 회사에 대하여 채권을 가지신 분은 2027년 1월 4일까지 그 채권액을 신고하여 주시기 바랍니다.</p>
+      <p>위 기간 내에 신고하지 아니하면 청산에서 제외됩니다.</p>
+      <dl class="meta">
+        <div><dt>게시일</dt><dd>2026년 10월 00일</dd></div>
+        <div><dt>신고 기한</dt><dd>2027년 1월 4일까지</dd></div>
+        <div><dt>신고처</dt><dd>경기도 파주시 청석로 272, 1004호(동패동, 센타프라자1)<br>sinryeo360@kakao.com</dd></div>
+      </dl>
+      <div class="sign">
+        2026년 10월 00일<br>
+        <strong>주식회사 소하</strong><br>
+        경기도 파주시 청석로 272, 1004호(동패동, 센타프라자1)<br>
+        청산인 한명수
+      </div>
+    </article>
+
+    <article id="notice-1" hidden>
+      <div class="tag">공고 제1호</div>
+      <h3>해산 및 채권신고 공고 (제1차)</h3>
+      <p>당 회사는 2026년 10월 8일 주주총회의 결의로 해산하였으므로, 당 회사에 대하여 채권을 가지신 분은 2027년 1월 4일까지 그 채권액을 신고하여 주시기 바랍니다.</p>
+      <p>위 기간 내에 신고하지 아니하면 청산에서 제외됩니다.</p>
+      <dl class="meta">
+        <div><dt>게시일</dt><dd>2026년 10월 00일</dd></div>
+        <div><dt>신고 기한</dt><dd>2027년 1월 4일까지</dd></div>
+        <div><dt>신고처</dt><dd>경기도 파주시 청석로 272, 1004호(동패동, 센타프라자1)<br>sinryeo360@kakao.com</dd></div>
+      </dl>
+      <div class="sign">
+        2026년 10월 00일<br>
+        <strong>주식회사 소하</strong><br>
+        경기도 파주시 청석로 272, 1004호(동패동, 센타프라자1)<br>
+        청산인 한명수
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="block" id="company">
+  <div class="wrap">
+    <div class="info">
+      <div><span class="label">COMPANY</span></div>
+      <dl>
+        <div><dt>상호</dt><dd>주식회사 소하</dd></div>
+        <div><dt>설립</dt><dd>2022년 3월 17일</dd></div>
+        <div><dt>본점</dt><dd>경기도 파주시 청석로 272, 1004호(동패동, 센타프라자1)</dd></div>
+        <div><dt>이메일</dt><dd>sinryeo360@kakao.com</dd></div>
+      </dl>
     </div>
-  </article>
-
-  <article id="notice-1" hidden>
-    <div class="label">공고 제1호</div>
-    <h2>해산 및 채권신고 공고 (제1차)</h2>
-    <p>당 회사는 2026년 10월 8일 주주총회의 결의로 해산하였으므로, 당 회사에 대하여 채권을 가지신 분은 2027년 1월 4일까지 그 채권액을 신고하여 주시기 바랍니다.</p>
-    <p>위 기간 내에 신고하지 아니하면 청산에서 제외됩니다.</p>
-    <dl class="meta">
-      <div><dt>게시일</dt><dd>2026년 10월 00일</dd></div>
-      <div><dt>신고 기한</dt><dd>2027년 1월 4일까지</dd></div>
-      <div><dt>신고처</dt><dd>경기도 파주시 청석로 272, 1004호(동패동, 센타프라자1)<br>sinryeo360@kakao.com</dd></div>
-    </dl>
-    <div class="sign">
-      2026년 10월 00일<br>
-      <strong>주식회사 소하</strong><br>
-      경기도 파주시 청석로 272, 1004호(동패동, 센타프라자1)<br>
-      청산인 한명수
-    </div>
-  </article>
-</main>
+  </div>
+</section>
 
 <footer>
   <div class="wrap">
-    주식회사 소하<br>
-    본점 경기도 파주시 청석로 272, 1004호(동패동, 센타프라자1)<br>
-    공고 게재 홈페이지 https://soha-corp.store
+    <div class="serif">주식회사 소하</div>
+    <div>본점 경기도 파주시 청석로 272, 1004호(동패동, 센타프라자1)<br>공고 게재 홈페이지 https://soha-corp.store</div>
   </div>
 </footer>
 
