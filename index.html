@@ -207,9 +207,9 @@
           2차 공고 날: "2차" 줄도 똑같이 합니다.
           상단 공고 띠(notice-latest)의 문구도 최신 공고 제목으로 바꿉니다.
         -->
-        <tr><td colspan="3" class="empty">현재 게시된 공고가 없습니다.</td></tr>
-        <!-- 1차 <tr><td class="no">1</td><td><a href="#notice-1">해산 및 채권신고 공고 (제1차)</a></td><td class="date">2026.10.00</td></tr> -->
-        <!-- 2차 <tr><td class="no">2</td><td><a href="#notice-2">해산 및 채권신고 공고 (제2차)</a></td><td class="date">2026.10.00</td></tr> -->
+        <tr id="row-empty"><td colspan="3" class="empty">현재 게시된 공고가 없습니다.</td></tr>
+        <tr data-from="2026-10-30" hidden><td class="no">2</td><td><a href="#notice-2">해산 및 채권신고 공고 (제2차)</a></td><td class="date">2026.10.30</td></tr>
+        <tr data-from="2026-10-23" hidden><td class="no">1</td><td><a href="#notice-1">해산 및 채권신고 공고 (제1차)</a></td><td class="date">2026.10.23</td></tr>
       </tbody>
     </table>
 
@@ -221,38 +221,38 @@
       채권신고 마감일은 2차 공고일로부터 2개월이 넘는 날이어야 합니다.
     -->
 
-    <article id="notice-2" hidden>
+    <article id="notice-2" data-from="2026-10-30" hidden>
       <div class="tag">공고 제2호</div>
       <h3>해산 및 채권신고 공고 (제2차)</h3>
       <p>당 회사는 2026년 10월 9일 주주 전원의 서면결의로 해산하였으므로, 당 회사에 대하여 채권을 가지신 분은 2027년 1월 4일까지 그 채권액을 신고하여 주시기 바랍니다.</p>
       <p>위 기간 내에 신고하지 아니하면 청산에서 제외됩니다.</p>
       <dl class="meta">
-        <div><dt>게시일</dt><dd>2026년 10월 00일</dd></div>
+        <div><dt>게시일</dt><dd>2026년 10월 30일</dd></div>
         <div><dt>신고 기한</dt><dd>2027년 1월 4일까지</dd></div>
-        <div><dt>신고처</dt><dd>경기도 파주시 청석로 272, 1104호(동패동, 센타프라자1)<br>sinryeo360@kakao.com</dd></div>
+        <div><dt>신고처</dt><dd>경기도 파주시 청석로 272, 1004호(동패동, 센타프라자1)<br>sinryeo360@kakao.com</dd></div>
       </dl>
       <div class="sign">
-        2026년 10월 00일<br>
+        2026년 10월 30일<br>
         <strong>주식회사 소하</strong><br>
-        경기도 파주시 청석로 272, 1104호(동패동, 센타프라자1)<br>
+        경기도 파주시 청석로 272, 1004호(동패동, 센타프라자1)<br>
         청산인 한명수
       </div>
     </article>
 
-    <article id="notice-1" hidden>
+    <article id="notice-1" data-from="2026-10-23" hidden>
       <div class="tag">공고 제1호</div>
       <h3>해산 및 채권신고 공고 (제1차)</h3>
       <p>당 회사는 2026년 10월 9일 주주 전원의 서면결의로 해산하였으므로, 당 회사에 대하여 채권을 가지신 분은 2027년 1월 4일까지 그 채권액을 신고하여 주시기 바랍니다.</p>
       <p>위 기간 내에 신고하지 아니하면 청산에서 제외됩니다.</p>
       <dl class="meta">
-        <div><dt>게시일</dt><dd>2026년 10월 00일</dd></div>
+        <div><dt>게시일</dt><dd>2026년 10월 23일</dd></div>
         <div><dt>신고 기한</dt><dd>2027년 1월 4일까지</dd></div>
-        <div><dt>신고처</dt><dd>경기도 파주시 청석로 272, 1104호(동패동, 센타프라자1)<br>sinryeo360@kakao.com</dd></div>
+        <div><dt>신고처</dt><dd>경기도 파주시 청석로 272, 1004호(동패동, 센타프라자1)<br>sinryeo360@kakao.com</dd></div>
       </dl>
       <div class="sign">
-        2026년 10월 00일<br>
+        2026년 10월 23일<br>
         <strong>주식회사 소하</strong><br>
-        경기도 파주시 청석로 272, 1104호(동패동, 센타프라자1)<br>
+        경기도 파주시 청석로 272, 1004호(동패동, 센타프라자1)<br>
         청산인 한명수
       </div>
     </article>
@@ -266,7 +266,7 @@
       <dl>
         <div><dt>상호</dt><dd>주식회사 소하</dd></div>
         <div><dt>설립</dt><dd>2022년 3월 17일</dd></div>
-        <div><dt>본점</dt><dd>경기도 파주시 청석로 272, 1104호(동패동, 센타프라자1)</dd></div>
+        <div><dt>본점</dt><dd>경기도 파주시 청석로 272, 1004호(동패동, 센타프라자1)</dd></div>
         <div><dt>이메일</dt><dd>sinryeo360@kakao.com</dd></div>
       </dl>
     </div>
@@ -276,9 +276,24 @@
 <footer>
   <div class="wrap">
     <div class="serif">주식회사 소하</div>
-    <div>본점 경기도 파주시 청석로 272, 1104호(동패동, 센타프라자1)<br>공고 게재 홈페이지 https://soha-corp.store</div>
+    <div>본점 경기도 파주시 청석로 272, 1004호(동패동, 센타프라자1)<br>공고 게재 홈페이지 https://soha-corp.store</div>
   </div>
 </footer>
 
+<script>
+/* 게시일이 되면 공고가 자동으로 표시됩니다 (한국시간 0시 기준) */
+(function(){
+  var now = new Date(Date.now() + 9*3600*1000).toISOString().slice(0,10);
+  var shown = [];
+  document.querySelectorAll("[data-from]").forEach(function(el){
+    if (now >= el.getAttribute("data-from")) { el.hidden = false; if (el.tagName === "ARTICLE") shown.push(el); }
+  });
+  if (shown.length) {
+    var e = document.getElementById("row-empty"); if (e) e.hidden = true;
+    var latest = shown[0].querySelector("h3").textContent;
+    var t = document.getElementById("notice-latest"); if (t) t.textContent = latest;
+  }
+})();
+</script>
 </body>
 </html>
